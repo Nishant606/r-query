@@ -3,6 +3,7 @@ import { QueryClientProvider, QueryClient } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import './App.css';
 import { HomePage } from './components/Home.page';
+import { RQSuperHeroesPage } from './components/RQSuperHeroes.page';
 import { RQSuperHeroPage } from './components/RQSuperHero.page';
 import { SuperHeroesPage } from './components/SuperHeroes.page';
 
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/rq-super-heroes/:heroId">
               <RQSuperHeroPage />
+            </Route>
+            <Route path="/rq-super-heroes">
+              <RQSuperHeroesPage />
             </Route>
 
             <Route path="/">
