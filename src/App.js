@@ -45,6 +45,9 @@ function App() {
             <Route path="/rq-parallel">
               <ParallelQueriesPage />
             </Route>
+            <Route path="/rq-dynamic-parallel">
+              <DynamicParallelPage heroIds={[1, 3]} />
+            </Route>
 
             <Route path="/">
               <HomePage />
