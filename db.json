@@ -32,14 +32,14 @@
   ],
   "users": [
     {
-      "id": "vishwas@example.com",
-      "channelId": "codevolution"
+      "id": "nishant@okok.com",
+      "channelId": "opcoder"
     }
   ],
   "channels": [
     {
-      "id": "codevolution",
-      "courses": ["react", "vue", "angular"]
+      "id": "opcoder",
+      "courses": ["react", "redux", "javascript"]
     }
   ],
   "colors": [

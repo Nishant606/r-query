@@ -48,6 +48,9 @@ function App() {
             <Route path="/rq-dynamic-parallel">
               <DynamicParallelPage heroIds={[1, 3]} />
             </Route>
+            <Route path="/rq-dependent">
+              <DependentQueriesPage email="nishant@okok.com" />
+            </Route>
 
             <Route path="/">
               <HomePage />
