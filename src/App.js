@@ -33,6 +33,10 @@ function App() {
             </ul>
           </nav>
           <Switch>
+            <Route path="/rq-paginated">
+              <PaginatedQueriesPage />
+            </Route>
+
             <Route path="/super-heroes">
               <SuperHeroesPage />
             </Route>
