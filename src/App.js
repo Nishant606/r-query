@@ -36,7 +36,9 @@ function App() {
             <Route path="/rq-paginated">
               <PaginatedQueriesPage />
             </Route>
-
+            <Route path="/rq-infinite">
+              <InfiniteQueriesPage />
+            </Route>
             <Route path="/super-heroes">
               <SuperHeroesPage />
             </Route>
