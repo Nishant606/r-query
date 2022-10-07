@@ -1,6 +1,11 @@
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { useSuperHeroesData } from '../hooks/useSuperHeroesData';
+import {
+  useAddSuperHeroesData,
+  useSuperHeroesData,
+} from '../hooks/useSuperHeroesData';
+import { useState } from 'react';
 
 const fetchSuperHeroes = () => {
   return axios.get('http://localhost:4000/superheroes');
@@ -34,11 +39,19 @@ export const RQSuperHeroesPage = () => {
   //     },
   //   }
   // );
+  const [name, setName] = useState('');
+  const [alterEgo, setAlter] = useState('');
+  const { data: mutationData, mutate } = useAddSuperHeroesData();
 
   const { isLoading, isError, error, refetch, data } = useSuperHeroesData(
     onSuccsess,
     onError
   );
+
+  const handleAddHeroClick = () => {
+    const hero = { name, alterEgo };
+    mutate(hero);
+  };
 
   if (isLoading) return <>Loading</>;
 
@@ -46,9 +59,27 @@ export const RQSuperHeroesPage = () => {
   return (
     <>
       <h2>RQ Super Heroes Page</h2>
+
+      <div>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          value={alterEgo}
+          onChange={(e) => setAlter(e.target.value)}
+        />
+        <button onClick={handleAddHeroClick}>Add hero</button>
+      </div>
       <button onClick={() => refetch()}>Fetch Heroes</button>
       {data?.data.map((hero) => {
-        return <div key={hero.name}>{hero.name}</div>;
+        return (
+          <div key={hero.id}>
+            <Link to={`/rq-super-heroes/${hero.id}`}>{hero.name}</Link>
+          </div>
+        );
       })}
       {/* data from select tranformation */}
       {/* {data.map((heroName) => (

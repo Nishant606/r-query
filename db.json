@@ -14,6 +14,12 @@
       "id": 3,
       "name": "Wonder Woman",
       "alterEgo": "Princess Diana"
+    },
+
+    {
+      "name": "IronMan",
+      "alterEgo": "Tony Stark",
+      "id": 6
     }
   ],
   "friends": [
